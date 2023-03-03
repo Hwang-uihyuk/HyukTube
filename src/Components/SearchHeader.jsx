@@ -23,25 +23,28 @@ export default function SearchHeader() {
 
   return (
     <>
-    <Link to = '/'>
+    <header className='w-full flex p-4 text-2xl border-b border-zinc-600 mb-4'>
+    <Link to = '/' className='flex items-center '>
         <div className='flex'>
-          <AiFillYoutube size={42} ></AiFillYoutube>        
+          <AiFillYoutube className='text-4xl text-brand'  ></AiFillYoutube>        
         </div>
+        <h1 className='font-bold ml-2 text-3xl'> YouTube</h1>
     </Link>
 
-            <form className ="flex" onSubmit={handleSubmit} >
+            <form className ="flex w-full justify-center" onSubmit={handleSubmit} >
             <input 
             type="text" 
-            className='bg-black text-slate-100'
+            className='bg-black text-gray-50 w-7/12 p-2 outline-none'
             placeholder='search...'
             onChange={handleSearch}
             value={search}>
             </input>
             
-            <button>
+            <button className='bg-zinc-600 px-4'>
             <FiSearch></FiSearch>
             </button>
             </form>
+      </header>
       </>        
   )
 }
