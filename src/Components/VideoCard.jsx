@@ -1,9 +1,22 @@
 import React from 'react'
+import { formatAgo } from '../util/date';
 
 export default function VideoCard({ video }) {
-  return (
+  const {title, thumbnails, channelTitle,publishedAt} = video.snippet;
+  return <li>
+    <img 
+    className='w-full'
+    src ={thumbnails.medium.url} alt={title}/>
     <div>
-        {video.snippet.title}
+      <p className='font-semibold my-2 line-clamp-2'>{title}</p>
+      <p className='text-sm opacity-80'>{channelTitle}</p>
+      <p>{publishedAt}</p> 
+      <p>{formatAgo(publishedAt,'ko')}</p>
+      {/* timeago 라이브러리 사용하기 */}
     </div>
-  )
+
+       
+        
+    </li>
+  
 }

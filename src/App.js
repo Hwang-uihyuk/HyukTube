@@ -9,9 +9,9 @@ const queryClient = new QueryClient();
 function App() {
   return(
   <>
+  <SearchHeader/>
   <YoutubeApiProvider>
   <QueryClientProvider client={queryClient}>
-    <SearchHeader/>
     <Outlet/>
   </QueryClientProvider>
   </YoutubeApiProvider>
