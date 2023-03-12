@@ -15,6 +15,7 @@ export default function Videos() {
     error,
     data: videos,
   } = useQuery(['videos', keyword], () => youtube.search(keyword));
+  console.log(videos)
   return (
     <>
       <div>Videos {keyword ? `🔍${keyword}` : '🔥'}</div>
